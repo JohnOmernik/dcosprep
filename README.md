@@ -3,6 +3,8 @@
 ----------
 This repo is designed to help get DCOS setup and ready to go via the Advanced Install.  Right now it works on Ubuntu 16.04 and CentOS 7.0. And is really angled at AWS. 
 
+To start, you run this from system that has the private key for the AWS servers, you don't run this from the AWS servers themselves. 
+
 So, steps:
 
 - Start some instances (I was using M3 or D2)
