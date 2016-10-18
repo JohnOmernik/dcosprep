@@ -9,6 +9,12 @@ cat > ./u_prep.sh << EOF2
 echo "Ensure AWS Security Groups allow Node to Node Communications"
 
 
+echo "Cleaning rc.local"
+sudo sed -i "s/exit 0//g" /etc/rc.local
+
+echo "Disabling Plymouth"
+echo "/bin/rm -f /etc/init.d/plymouth* > /dev/null 2>&1"  | sudo tee -a /etc/rc.local
+
 sudo apt-get update
 sudo apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
