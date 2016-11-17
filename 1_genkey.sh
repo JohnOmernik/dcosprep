@@ -4,7 +4,7 @@ HOSTFILE="./hostlist.txt"
 HOSTS=$(cat $HOSTFILE)
 
 INIT_KEY="~/.ssh/id_rsa"
-INIT_USER="centos"
+INIT_USER="ubuntu"
 GEN_KEY="Y"
 echo "Generating new Key for use on cluster"
 if [ -f "./out.prv" ]; then
