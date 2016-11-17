@@ -23,7 +23,8 @@ mkdir -p ~/dcosboot/genconf
 
 cd dcosboot
 
-Create a file in genconf called ip-detect. This is what I put it in it:
+Create a file ./genconf/ip-detect
+This is what I put it in it:
 
 ```
 #!/bin/bash
