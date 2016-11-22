@@ -30,8 +30,10 @@ sudo apt-get remove -y command-not-found
 sudo mkdir -p /etc/systemd/system/docker.service.d && sudo tee /etc/systemd/system/docker.service.d/override.conf <<- EOF
 [Service]
 ExecStart=
-ExecStart=/usr/bin/docker daemon --storage-driver=overlay --insecure-registry=maprdocker-mapr-shared.marathon.slave.mesos:5000 --insecure-registry=dockerregv2-shared.marathon.slave.mesos:5005 -H fd://
+ExecStart=/usr/bin/docker daemon --storage-driver=overlay -H fd://
+
 EOF
+#ExecStart=/usr/bin/docker daemon --storage-driver=overlay --insecure-registry=maprdocker-mapr-shared.marathon.slave.mesos:5000 --insecure-registry=dockerregv2-shared.marathon.slave.mesos:5005 -H fd://
 
 sudo apt-get install -y -q docker-engine=1.11.2-0~xenial
 #sudo apt-get install -y -q docker-engine
